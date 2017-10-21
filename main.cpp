@@ -398,17 +398,14 @@ extern "C" void* ThreadStats(void*) {
 }
 
 // TODO: Add seeds
-static const string mainnet_seeds[5];// = {"dnsseed.bluematt.me", "bitseed.xf2.org", "dnsseed.bitcoin.dashjr.org", "seed.bitcoin.sipa.be", ""};
-static const string testnet_seeds[5];// = {"testnet-seed.alexykot.me",
-                                      // "testnet-seed.bitcoin.petertodd.org",
-                                      // "testnet-seed.bluematt.me",
-                                      // "testnet-seed.bitcoin.schildbach.de",
-                                      // ""};
+static const string mainnet_seeds[] = {"eu-dnsseed.bitcoingold-official.org"};
+static const string testnet_seeds[] = {"eu-test-dnsseed.bitcoingold-official.org", "dnsseed.minepool.gold"};
+
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
-    db.Add(CService("kjy2eqzk4zwi5zd3.onion", 8333), true);
+    db.Add(CService("kjy2eqzk4zwi5zd3.onion", 8338), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
