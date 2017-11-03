@@ -399,7 +399,7 @@ extern "C" void* ThreadStats(void*) {
 
 // TODO: Add seeds
 static const string mainnet_seeds[] = {""};//{"eu-dnsseed.bitcoingold-official.org"};
-static const string testnet_seeds[] = {""};//{"eu-test-dnsseed.bitcoingold-official.org", "dnsseed.minepool.gold"};
+static const string testnet_seeds[] = {"eunode.pool.gold", "asianode.pool.gold", ""};
 
 static const string *seeds = mainnet_seeds;
 
