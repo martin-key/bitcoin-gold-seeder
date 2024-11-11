@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   seeder:
-    build: .
+    image: gostartups/bitcoingoldseeder
     container_name: bitcoin-gold-seeder
     ports:
       - "53:53/tcp"
