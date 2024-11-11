@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  seeder:
+    build: .
+    container_name: bitcoin-gold-seeder
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    volumes:
+      - seeder-data:/app/data
+    command:
+      - "-h"
+      - "dnsseed.example.com"
+      - "-n"
+      - "ns.example.com"
+      - "-m"
+      - "admin@example.com"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+
+volumes:
+  seeder-data:
+    name: bitcoin-gold-seeder-data 
